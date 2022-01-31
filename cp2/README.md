@@ -1,12 +1,12 @@
-# CP1 - Unigram Probabilities
+# CP2 - Bayesian Linear Regression
 
 See all instructions here:
 
-https://www.cs.tufts.edu/comp/136/2022s/cp1.html
+https://www.cs.tufts.edu/comp/136/2022s/cp2.html
 
 # Install
 
-Following the instructions here for the standard "spr_2021s_env" used throughout this course:
+Following the instructions here for the standard "spr_2022s_env" used throughout this course:
 
 https://www.cs.tufts.edu/comp/136/2022s/setup_python_env.html
 
