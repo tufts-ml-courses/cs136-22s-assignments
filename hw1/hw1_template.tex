@@ -16,6 +16,7 @@
 %% Hyperlinks always blue, no weird boxes
 \usepackage[hyphens]{url}
 \usepackage[colorlinks=true,allcolors=black,pdfborder={0 0 0}]{hyperref}
+\usepackage[headsep=0.5cm,headheight=2cm]{geometry}
 
 %%% Doc layout
 \usepackage{parskip}
@@ -84,7 +85,7 @@ TODO YOUR SOLUTION HERE
 
 Let $\mu$ be a Dirichlet-distributed random variable: $\mu \sim \text{Dir}(a_1, \ldots a_V)$. 
 
-Show that $\mathbb{E}[ \mu_w ] = \frac{a_w}{\sum_{v=1}^V a_v}$, for any integer $w$ that indexes a vocabulary word.
+Show that $\mathbb{E}[ \mu_v ] = \frac{a_v}{\sum_{w=1}^V a_w}$, for any integer $v$ that indexes a vocabulary word.
 
 ** Hint:** You can use the identity:
 \begin{align}
@@ -124,7 +125,7 @@ Derive the probability mass function for the predictive posterior.
 That is, show that after seeing the $N$ training words, the probability of the next word $X_*$ being vocabulary word $v$ is:
 
 \begin{align}
-p( X_* = w | X_1 = x_1 \ldots X_N = x_n, \alpha) = \frac{n_w + \alpha}{N + V\alpha}
+p( X_* = v | X_1 = x_1 \ldots X_N = x_n, \alpha) = \frac{n_v + \alpha}{N + V\alpha}
 \end{align}
 }
 
