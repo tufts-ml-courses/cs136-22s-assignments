@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage} 
+\usepackage{microtype}      % microtypography
+\usepackage{array}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+%% Header
+\usepackage{fancyhdr}
+\usepackage[headsep=0.5cm,headheight=2cm]{geometry}
+\fancyhf{}
+\fancyhead[C]{CS 136 - 2022s - HW-CP3 Template}
+\fancyfoot[C]{\thepage} % page number
+\renewcommand\headrulewidth{0pt}
+\pagestyle{fancy}
+
+%% Hyperlinks always blue, no weird boxes
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,allcolors=black,pdfborder={0 0 0}]{hyperref}
+
+%%% Doc layout
+\usepackage{parskip}
+\usepackage{times}
+
+%%% Write out problem statements in blue, solutions in black
+\usepackage{color}
+\newcommand{\officialdirections}[1]{{\color{blue} #1}}
+
+%%% Avoid automatic section numbers (we'll provide our own)
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+~~\\ %% add vert space
+
+\Large{\bf Student Name: FILL}
+
+\Large{\bf Collaboration Statement: FILL}
+
+Total hours spent: FILL
+
+I consulted the following resources:
+\begin{itemize}
+\item FILL
+\end{itemize}
+
+\tableofcontents
+
+\newpage
+\officialdirections{
+\subsection{HW-1a Detailed Balance for MH}
+Show the following for any $x > 0, y > 0$:
+\begin{align}
+\frac
+  { \min \left( 1, \frac{x}{y} \right) }
+  { \min \left( 1, \frac{y}{x} \right) }
+=
+\frac{x}{y}
+\end{align}
+}
+
+\newpage
+\officialdirections{
+\subsection{HW-1b Detailed Balance for MH}
+If $\mathcal{T}$ is the Metropolis-Hastings transition probability distribution, show that it means the detailed balance condition with respect to $p^*$ for any $a,b$ such that $a \neq b$:
+\begin{align}
+p^*( a) \mathcal{T}( b | a)  = p^*(b) \mathcal{T}( a | b)
+\end{align}
+}
+
+\newpage
+
+\subsection{CP-2a: Figure: Metropolis Samples vs. Proposal Standard Deviation}
+
+\subsection{CP-2b: Short answer: Which hyperparameter would you recommend and why?}
+
+\subsection{CP-2c: Short answer: Can you use a single chain's accept rates to assess convergence?}
+
+\newpage
+
+\subsection{CP-3a: Figure: Gibbs Samples}
+
+\subsection{CP-3b: What are the advantages of the Gibbs sampler over the random walk?}
+
+\subsection{CP-3c: What are the disadvantages of the Gibbs sampler over the random walk?}
+
+\newpage
+\subsection{CP-4a: Figure: MCMC samples vs. Training Set Size}
+
+\newpage
+\subsection{CP-4b: Short Answer: Does $N=1$ plot make sense?}
+
+\subsection{CP-4c: Short Answer: What happens as $N\rightarrow \infty$?}
+
+
+
+\end{document}
