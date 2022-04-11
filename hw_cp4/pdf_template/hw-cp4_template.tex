@@ -1,0 +1,219 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage} 
+\usepackage{microtype}      % microtypography
+
+%% Header
+\usepackage{fancyhdr}
+\fancyhf{}
+\usepackage[headsep=0.5cm,headheight=2cm]{geometry}
+\fancyhead[C]{CS 136 - 2022s - HW-CP4}
+\fancyfoot[C]{\thepage} % page number
+\renewcommand\headrulewidth{0pt}
+\pagestyle{fancy}
+
+%% Hyperlinks always blue, no weird boxes
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,allcolors=black,pdfborder={0 0 0}]{hyperref}
+
+%% Math typesetting
+\usepackage{array}
+\usepackage{amsmath,amssymb,amsfonts, graphicx}
+\usepackage{amsthm}
+
+%%% Doc layout
+\usepackage{parskip}
+\usepackage{times}
+\usepackage{verbatim}
+
+%%% Pretty tables
+\usepackage{booktabs}
+
+%%% Write out problem statements in blue, solutions in black
+\usepackage{color}
+\newcommand{\officialdirections}[1]{{\color{blue} #1}}
+
+%%% Avoid automatic section numbers (we'll provide our own)
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+~~\\ %% add vert space
+\Large{\bf Student Name:}
+
+\Large{\bf Collaboration Statement:}
+
+Total hours spent: TODO
+
+I consulted the following resources:
+\begin{itemize}
+\item TODO
+\item TODO
+\end{itemize}
+
+\tableofcontents
+
+
+\newpage
+\officialdirections{
+\subsection*{HW-1a: Problem Statement}
+Prove that the mean of vector $x$ under the mixture distribution is given by:
+\begin{align}
+\mathbb{E}_{p^{\text{mix}}(x)}[x] = \sum_{k=1}^K \pi_k \mu_k
+\end{align}
+}
+
+\subsection{HW-1a: Solution}
+TODO
+
+\newpage
+\officialdirections{
+\subsection*{HW-1b: Problem Statement}
+Given: $m = \mathbb{E}_{p^{\text{mix}(x)}}[x]$ (as in 1a).
+Prove that the covariance of vector $x$ is:
+\begin{align}
+\text{Cov}_{p^{\text{mix}}(x)}[x] = \sum_{k=1}^K \pi_k (\Sigma_k + \mu_k \mu_k^T ) - m m^T
+\end{align}
+}
+\subsection{HW-1b: Solution}
+TODO
+ 
+ 
+\newpage
+\officialdirections{
+\subsection*{HW-2a: Problem Statement}
+Show (with math) that using the parameter settings defined above, the general formula for $\gamma_{nk}$ will simplify to the following (inspired by PRML Eq. 9.42):
+
+\begin{align}
+	\gamma_{nk} = \frac
+	{  e^{ -\frac{1}{2} \frac{1}{\epsilon} || x_n - \mu_k ||^2 } }
+	{ \sum_{j=1}^K e^{ -\frac{1}{2} \frac{1}{\epsilon} || x_n - \mu_j ||^2 }}
+\end{align}
+}
+
+\subsection{HW-2a: Solution}
+
+TODO
+
+
+
+\newpage
+\officialdirections{
+\subsection*{HW-2b: Problem Statement}
+}
+
+\subsection{HW-2b: Solution}
+
+Using $\epsilon = 1.0000$, we obtain $\gamma$ as:
+\begin{verbatim}
+[[?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]]
+\end{verbatim}
+
+\officialdirections{
+\subsection*{HW-2c: Problem Statement}
+}
+
+\subsection{HW-2c: Solution}
+
+Using $\epsilon = 0.1$, we see the $\gamma$ values get more extreme:
+\begin{verbatim}
+[[?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]
+ [?.??? ?.??? ?.???]]
+\end{verbatim}
+
+\newpage
+\officialdirections{
+\subsection*{HW-2d: Problem Statement}
+You can regard the outputs of the $k$-Means algorithm as a one-hot vector of dimension $K$. For example, if a sample $x_n$ is assigned to a cluster $k$ through $k$-Means, the corresponding one-hot vector will have value 1 at its $k^\text{th}$ element. We can view this assignment by $k$-Means, for each example $x_n$, as a valid probability distribution, as the entries of a one-hot vector sums to 1.
+
+
+What will happen to the value of $\gamma$ as $\epsilon \rightarrow 0$? How is this related to the K-means one-hot assignment? 
+}
+
+\subsection{HW-2d: Solution}
+TODO
+\newpage
+
+\officialdirections{
+\subsection{CP-3a: Problem Statement}
+
+LBFGS Trace plots of Training Loss vs Iteration}
+
+
+\textbf{Solution:}
+
+
+\bigskip
+\officialdirections{
+\subsection{CP-3b: Problem Statement}
+
+LBFGS best model with K=08
+}
+
+\textbf{Solution:}
+
+\bigskip
+\officialdirections{
+\subsection{CP-3c: Problem Statement}
+
+LBFGS Scores vs Number of Clusters K
+}
+
+\textbf{Solution:}
+
+\newpage
+\officialdirections{
+\subsection{CP-4a: Problem Statement}
+
+EM Trace plots of Training Loss vs Iteration
+}
+
+\textbf{Solution:}
+
+\bigskip
+\officialdirections{
+\subsection{CP-4b Problem Statement}
+
+EM best model with K=08
+}
+
+\textbf{Solution}
+
+\bigskip
+\officialdirections{
+\subsection{CP-4c Problem Statement}
+
+EM Scores vs Number of Clusters K
+}
+
+\textbf{Solution:}
+
+\bigskip
+\officialdirections{
+\subsection{CP-4d Problem Statement}
+
+Interpret the results of the table in 2c.
+}
+
+\textbf{Solution:}
+
+\bigskip
+
+\officialdirections{
+\subsection{CP-4e Problem Statement}
+
+Reflect on differences between EM and LBFGS
+}
+
+\textbf{Solution:}
+
+\end{document}
