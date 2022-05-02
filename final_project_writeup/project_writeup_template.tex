@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage} 
+\usepackage{microtype}      % microtypography
+\usepackage{array}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+
+%% Header
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[C]{CS 136 - 2022s - Final project writeup Submission}
+\fancyfoot[C]{\thepage} % page number
+\renewcommand\headrulewidth{0pt}
+\pagestyle{fancy}
+
+\usepackage[headsep=0.5cm,headheight=2cm]{geometry}
+
+%% Hyperlinks always blue, no weird boxes
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,allcolors=black,pdfborder={0 0 0}]{hyperref}
+
+%%% Doc layout
+\usepackage{parskip}
+\usepackage{times}
+
+%%% Write out problem statements in blue, solutions in black
+\usepackage{color}
+\newcommand{\officialdirections}[1]{{\color{blue} #1}}
+
+%%% Avoid automatic section numbers (we'll provide our own)
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+~~\\ %% add vert space
+
+{\Large{\bf Student Names: TODO}}
+
+
+{\Large{\bf Collaboration Statement:}}
+
+Turning in this assignment indicates you have abided by the course Collaboration Policy:
+
+\url{www.cs.tufts.edu/comp/136/2022s/index.html#collaboration-policy}
+
+Total hours spent: TODO
+
+We consulted the following resources:
+\begin{itemize}
+\item TODO
+\item TODO
+\item $\ldots$	
+\end{itemize}
+
+\newpage
+
+These are the official instructions for the final project writeup.  You can find instructions on how to submit at \url{www.cs.tufts.edu/comp/136/2022s/projectwriteup.html}
+
+\textbf{Please consult the full project description at \url{https://www.cs.tufts.edu/comp/136/2022s/project.html} in addition to this document when working on this checkpoint.  It gives details on what we expect.}
+
+\section{Summarize your project}
+
+The goal of this section is to provide context to situate your final set of results.  You should include a brief recap of your dataset; your original model; the issues that your upgrade is intended to address; and your upgrade.  Be sure to include a brief description of any dataset/inference/model properties and results from checkpoint 2 that you will be referencing in your performance hypotheses.
+
+This section should be at most 1/2 page.
+
+\textbf{Section grading rubric:}
+\begin{itemize}
+	\item Are relevant data details for understanding the upgrade results summarized? (1 point)
+	\item Are relevant model details for understanding the upgrade results summarized? (1 point)
+	\item Are relevant previously-found issues for understanding the upgrade results summarized? (1 point)
+	\item Are relevant previous results for understanding the upgrade results summarized? (1 point)
+\end{itemize}
+
+\section{Upgrade Implementation}
+
+In this section, you should describe the implementation of your upgrade.  Please describe any design choices you made when implementing it, focusing on things that changed since you submitted checkpoint 3.  Be sure to describe any issues you ran into when applying your upgrade to your dataset, as well as how you have addressed them.  For example, did you have trouble scaling the model to run in a reasonable amount of time on your dataset?  If so, what changes to either the code or dataset did you make and what was the outcome?
+
+This section should be at most 1/2 page.
+
+Please additionally submit the code that implements your upgrade and generates the results in this report in the separate Final Project Code submission.
+
+\textbf{Section grading rubric:}
+\begin{itemize}
+	\item Describe how you have implemented your upgrade (3 points)
+	\item Describe any bottlenecks you ran into (2 points)
+	\item Describe how you addressed bottlenecks (2 points)
+	\item Submitted code to implement the upgrade and generate results in the following section (10 points)
+\end{itemize}
+
+\section{Performance Hypotheses for Upgrade}
+
+In this section, you should state 3 performance hypotheses describing how you believe your model will perform on your dataset.  These should reference specific model/learning method properties and dataset properties described in the previous sections.  They should also be tied to a measurable performance outcome, and you should describe how you will measure this outcome (you need to have a way to figure out whether your hypothesis is true or not!).  For example, if you hypothesize that your model will train slowly because of X property of your dataset and Y property of your model, you should state that you will compute runtime of your model training.  
+
+For many (but not all) of you, these may be closely related to your previous hypotheses.  One common example is stating a hypothesis in absolute terms in checkpoint 1 (e.g. the runtime of my model will be slow because...), then stating it here in relative terms (e.g. the runtime of my upgrade will be faster than the original model because...).  It is fine and expected for your hypotheses to be related since you were building on these previous results to define your upgrade.  Although it is also fine if you choose to focus on a different aspect than in your previous set of hypotheses.
+
+Please consult the project overview page for instructions on how we want you to specify performance hypotheses: \url{https://www.cs.tufts.edu/comp/136/2022s/project.html}
+
+This section should 1/2-2/3 of a page long.
+
+\textbf{Section grading rubric (for each hypothesis):}
+\begin{itemize}
+	\item Links to previously described model or inference property of upgrade (2 point)
+	\item Links to previously described dataset property of upgrade (2 point)
+	\item Tied to measurable performance outcomes (2 point)
+\end{itemize}
+
+\section{Evaluating hypotheses for upgrade}
+
+In this section, you should describe the outcome of 3 of your hypotheses from above.  Separately for each of your 3 hypotheses, please include the information described in the example hypothesis section below.  \textbf{If your hypothesis is comparing your upgrade to the original model, please be sure to include the results from the original model here as well.} 
+
+\subsection{Hypothesis 1 (Example)}
+
+Each hypothesis should include no more than 1/2 page of text (excluding your result).  
+
+\begin{itemize}
+ \item Briefly reiterate your hypothesis.  
+ \item Describe how you evaluated your hypothesis in 2-3 sentences.  Be sure to specify your performance metric and any design choices.  For example, if you computed likelihood, be sure to specify whether it is computed on a held-out test set, and if it is, how the test set was held-out (e.g. random sampling, instances with a specific property, etc.)
+ \item Include a specific result generated by the code you submit, relating to the performance metric.  This can be a graph or a table of numbers.  Your graph should include a title, a legend (where applicable), and clear labels on the axes.   
+ \item Describe the behavior of the result in 1-2 sentences.  This should include a description of what you see on the graph (for example, line A is higher than line B in the left half of the graph).
+ \item Analyze the implications of the result in approximately 1 paragraph.  This should link back to the specific dataset and model/learning method properties you included in your original hypothesis.  
+ \item Was your hypothesis correct?  Spend 2-3 sentences reflecting on why that might be the case.
+\end{itemize}
+
+\textbf{Subsection grading rubric (for each hypothesis):}
+\begin{itemize}
+	\item Describe implementation details of how you evaluated your hypothesis (1 point)
+	\item Include a specific result linked to the evaluation of your hypothesis (2 points)
+	\item Is your result coherently presented (axis labels, titles, legends etc) (1 point)
+	\item Description of the behavior of result (2 points)
+	\item Analysis of implication of result (3 points)
+	\item Link back to hypothesis: why was or wasn't it right? (2 points)
+\end{itemize}
+
+\section{Reflection}
+
+In this section, you should reflect on your project in 2-3 paragraphs, being sure to answer the following questions:
+\begin{itemize}
+	\item Did anything about how your original model worked on your data surprise you? (3 points)
+	\item What about your upgrade? (3 points)
+	\item If you were to continue working with this data, what would you like to try next?  Why? (3 points)
+\end{itemize}
+
+This section should 1/2-2/3 of a page long.
+
+\section{Spot changes}
+
+This is a completely optional section where you can submit up to 2 spot corrections to previous checkpoints to recuperate points.  If you do so, please include the checkpoint number, and the exact rubric item this corresponds to.  Please also clearly highlight the change you made from your original submission.  These should be brief and easy to compare to your previous submission or they will not be re-evaluated.
+
+\end{document}
+
+
